@@ -7,6 +7,10 @@ export const getSession = () => read('pos.session', null);
 export const setSession = (s) => write('pos.session', s);
 export const clearSession = () => localStorage.removeItem('pos.session');
 
+export const getCart = () => read('pos.cart', { items: [], discountPct: 0 });
+export const saveCart = (items, discountPct = 0) => write('pos.cart', { items, discountPct });
+export const clearCart = () => localStorage.removeItem('pos.cart');
+
 export const cacheProducts = (p) => write('pos.products', p);
 export const cachedProducts = () => read('pos.products', []);
 export const getQueue = () => read('pos.queue', []);

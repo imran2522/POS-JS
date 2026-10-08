@@ -12,42 +12,42 @@
       "name": "Latte",
       "price": 450,
       "taxRate": 0.08,
-      "stock": 99
+      "stock": 96
     },
     {
       "sku": "COF-03",
       "name": "Cappuccino",
       "price": 425,
       "taxRate": 0.08,
-      "stock": 99
+      "stock": 93
     },
     {
       "sku": "BAK-01",
       "name": "Croissant",
       "price": 375,
       "taxRate": 0.08,
-      "stock": 39
+      "stock": 28
     },
     {
       "sku": "BAK-02",
       "name": "Blueberry muffin",
       "price": 350,
       "taxRate": 0.08,
-      "stock": 40
+      "stock": 32
     },
     {
       "sku": "SND-01",
       "name": "Turkey sandwich",
       "price": 895,
       "taxRate": 0.08,
-      "stock": 25
+      "stock": 19
     },
     {
       "sku": "BEV-01",
       "name": "Orange juice",
       "price": 400,
       "taxRate": 0.08,
-      "stock": 30
+      "stock": 27
     },
     {
       "sku": "BEV-02",
@@ -100,6 +100,409 @@
       "status": "paid",
       "createdAt": "2026-10-08T10:36:59.747Z",
       "syncedAt": "2026-10-08T10:36:59.765Z"
+    },
+    {
+      "id": "3189aa16-7b91-4fd0-847b-e28420ba8c33",
+      "items": [
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BEV-01",
+          "name": "Orange juice",
+          "price": 400,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 10,
+      "paymentMethod": "cash",
+      "subtotal": 2020,
+      "discount": 202,
+      "tax": 145,
+      "total": 1963,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T10:57:15.223Z",
+      "syncedAt": "2026-10-08T10:57:15.239Z"
+    },
+    {
+      "id": "ce4a308d-c6d9-4f11-83c0-7dd9e04e872e",
+      "items": [
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "card",
+      "subtotal": 725,
+      "discount": 0,
+      "tax": 58,
+      "total": 783,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:04:58.688Z",
+      "syncedAt": "2026-10-08T11:04:58.688Z"
+    },
+    {
+      "id": "2961082d-4312-41f8-b164-7b75bf841763",
+      "items": [
+        {
+          "sku": "COF-02",
+          "name": "Latte",
+          "price": 450,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 1600,
+      "discount": 0,
+      "tax": 128,
+      "total": 1728,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:09:19.861Z",
+      "syncedAt": "2026-10-08T11:09:19.867Z"
+    },
+    {
+      "id": "3923308f-14c4-49b9-8fba-844b8b887e9c",
+      "items": [
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 800,
+      "discount": 0,
+      "tax": 64,
+      "total": 864,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:09:56.926Z",
+      "syncedAt": "2026-10-08T11:09:56.931Z"
+    },
+    {
+      "id": "0c722996-3f60-4932-8a2d-a17d5ab5b383",
+      "items": [
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 1245,
+      "discount": 0,
+      "tax": 100,
+      "total": 1345,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:11:09.161Z",
+      "syncedAt": "2026-10-08T11:11:09.163Z"
+    },
+    {
+      "id": "f124e8c5-1741-443c-9f2e-f12226b2a83f",
+      "items": [
+        {
+          "sku": "COF-02",
+          "name": "Latte",
+          "price": 450,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 1250,
+      "discount": 0,
+      "tax": 100,
+      "total": 1350,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:15:44.298Z",
+      "syncedAt": "2026-10-08T11:15:44.296Z"
+    },
+    {
+      "id": "aa803f28-2c8f-476e-b868-4fbb52d8709e",
+      "items": [
+        {
+          "sku": "COF-02",
+          "name": "Latte",
+          "price": 450,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 4
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "card",
+      "subtotal": 2375,
+      "discount": 0,
+      "tax": 190,
+      "total": 2565,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:15:52.682Z",
+      "syncedAt": "2026-10-08T11:15:52.679Z"
+    },
+    {
+      "id": "d2c48ad2-61a3-4b55-931d-e07fe5516468",
+      "items": [
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BEV-01",
+          "name": "Orange juice",
+          "price": 400,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "card",
+      "subtotal": 1645,
+      "discount": 0,
+      "tax": 132,
+      "total": 1777,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:20:47.931Z",
+      "syncedAt": "2026-10-08T11:20:47.937Z"
+    },
+    {
+      "id": "d379c2c0-3d73-417b-ad11-da31b12db7d3",
+      "items": [
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BEV-01",
+          "name": "Orange juice",
+          "price": 400,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "card",
+      "subtotal": 1645,
+      "discount": 0,
+      "tax": 132,
+      "total": 1777,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:20:56.034Z",
+      "syncedAt": "2026-10-08T11:20:56.038Z"
+    },
+    {
+      "id": "ea7d7413-75dd-4e3f-b48e-1a279dfa07a0",
+      "items": [
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 2045,
+      "discount": 0,
+      "tax": 164,
+      "total": 2209,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:27:20.300Z",
+      "syncedAt": "2026-10-08T11:27:20.299Z"
+    },
+    {
+      "id": "931f96a2-2f20-47b6-abf4-e3b02e1c6af3",
+      "items": [
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-02",
+          "name": "Blueberry muffin",
+          "price": 350,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "SND-01",
+          "name": "Turkey sandwich",
+          "price": 895,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "card",
+      "subtotal": 2045,
+      "discount": 0,
+      "tax": 164,
+      "total": 2209,
+      "cashier": "scott",
+      "status": "paid",
+      "createdAt": "2026-10-08T11:27:30.296Z",
+      "syncedAt": "2026-10-08T11:27:30.294Z"
     }
   ],
   "users": [

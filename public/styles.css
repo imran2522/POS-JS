@@ -30,7 +30,9 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 380px; min-height: 0; 
 .tile span { color: var(--pine); font-variant-numeric: tabular-nums; }
 
 .cart { background: var(--white); border-left: 1px solid var(--line); padding: 20px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
+.cart-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .cart h2 { margin: 0; }
+#newSaleBtn { padding: 6px 12px; min-height: 36px; }
 .line { display: grid; grid-template-columns: 1fr auto 80px; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
 .line small { display: block; color: #66706b; }
 .qty { display: flex; align-items: center; gap: 8px; }

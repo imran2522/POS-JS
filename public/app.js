@@ -1,7 +1,7 @@
 import { addItem, setQty, calcTotals, fmt, lineTotal, setCurrency } from '/shared/cart.js';
 import { MAX_DISCOUNT } from '/shared/roles.js';
 import * as api from './api.js';
-import { getQueue, getFailed, getSession, cachedShop, getPrinterPrefs, setPrinterPrefs } from './storage.js';
+import { getQueue, getFailed, getSession, cachedShop, getPrinterPrefs, setPrinterPrefs, getCart, saveCart, clearCart } from './storage.js';
 import { buildReceipt, toPlain, toEscPos } from './receipt.js';
 import * as printer from './printer.js';
 import { createAdmin } from './admin.js';
@@ -28,7 +28,10 @@ function showLogin(message = '') {
 }
 
 function showApp(user) {
+  const savedCart = getCart();
   state.user = user;
+  state.items = savedCart.items;
+  state.discountPct = savedCart.discountPct;
   $('login').hidden = true;
   $('app').hidden = false;
   $('who').textContent = `${user.username} · ${user.role}`;
@@ -49,6 +52,7 @@ function renderGrid() {
 }
 
 function renderCart() {
+  saveCart(state.items, state.discountPct);
   $('lines').innerHTML = state.items.length
     ? state.items.map((i) => `
         <div class="line">
@@ -90,6 +94,17 @@ const closeModal = () => { $('modal').hidden = true; $('search').focus(); };
 const closeBtn = '<button id="closeBtn" class="ghost">Close</button>';
 const errorLine = (m) => (m ? `<p class="error" role="alert">${esc(m)}</p>` : '');
 
+function startNewSale() {
+  if (state.items.length && !confirm('Start a new sale? The current sale will be cleared.')) return;
+  state.items = [];
+  state.discountPct = 0;
+  $('discount').value = 0;
+  clearCart();
+  closeModal();
+  renderCart();
+  $('search').focus();
+}
+
 // ---------- sales ----------
 function checkout(paymentMethod) {
   if (!state.items.length) return;
@@ -103,8 +118,6 @@ function checkout(paymentMethod) {
   showReceipt(order);
   if (printer.isConnected() && getPrinterPrefs().auto) autoPrint(order);
 
-  state.items = []; state.discountPct = 0; $('discount').value = 0;
-  renderCart();
   api.submitOrder(order).then(renderStatus);
 }
 
@@ -118,7 +131,7 @@ function showReceipt(order, { copy = false } = {}) {
     <p id="printMsg" class="error" role="status"></p>
     <div class="row">
       <button id="printBtn">Print</button>
-      <button id="closeBtn" class="ghost">${copy ? 'Done' : 'New sale'}</button>
+      <button id="closeBtn" class="ghost">Close</button>
     </div>`);
 }
 
@@ -334,6 +347,7 @@ $('discount').addEventListener('input', (e) => {
 });
 
 document.querySelectorAll('[data-pay]').forEach((b) => b.addEventListener('click', () => checkout(b.dataset.pay)));
+$('newSaleBtn').addEventListener('click', startNewSale);
 $('managerBtn').addEventListener('click', showManagerMenu);
 $('printerBtn').addEventListener('click', () => showPrinter());
 $('pwBtn').addEventListener('click', () => showPassword());
