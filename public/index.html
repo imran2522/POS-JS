@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JS Store</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="theme-color" content="#1f5d50" />
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="loginForm">
+    <h1>JS Store</h1>
+    <label>Username <input id="loginUser" autocomplete="username" required /></label>
+    <label>Password <input id="loginPass" type="password" autocomplete="current-password" required /></label>
+    <p id="loginError" class="error" role="alert"></p>
+    <button type="submit">Sign in</button>
+  </form>
+</div>
+
+<div id="app" class="shell" hidden>
+  <header>
+    <h1>JS Store</h1>
+    <span id="status" class="pill"></span>
+    <span id="pending" class="pill wait" hidden></span>
+    <span id="failed" class="pill off" hidden></span>
+    <span id="cached" class="pill ok" hidden>Works offline</span>
+    <span id="who" class="pill"></span>
+    <button id="managerBtn" data-role="manager">Manager</button>
+    <button id="printerBtn" class="ghost">Printer</button>
+    <button id="pwBtn" class="ghost">Password</button>
+    <button id="logoutBtn" class="ghost">Sign out</button>
+  </header>
+
+  <main>
+    <section class="catalog">
+      <input id="search" placeholder="Search or scan a barcode" />
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <aside class="cart">
+      <h2>Current sale</h2>
+      <div id="lines"></div>
+      <label class="disc">Discount %
+        <input id="discount" type="number" min="0" max="10" value="0" />
+      </label>
+      <dl id="totals" class="totals"></dl>
+      <div class="pay">
+        <button id="payCash" data-pay="cash">Cash</button>
+        <button id="payCard" data-pay="card">Card</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="modal" class="modal" hidden></div>
+  <div id="update" class="update" role="status" hidden>A new version is ready. <button id="updateBtn" class="small">Reload</button></div>
+</div>
+<div id="printArea" aria-hidden="true"></div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

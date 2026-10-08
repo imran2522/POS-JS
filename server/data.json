@@ -1,0 +1,120 @@
+{
+  "products": [
+    {
+      "sku": "COF-01",
+      "name": "Espresso",
+      "price": 300,
+      "taxRate": 0.08,
+      "stock": 99
+    },
+    {
+      "sku": "COF-02",
+      "name": "Latte",
+      "price": 450,
+      "taxRate": 0.08,
+      "stock": 99
+    },
+    {
+      "sku": "COF-03",
+      "name": "Cappuccino",
+      "price": 425,
+      "taxRate": 0.08,
+      "stock": 99
+    },
+    {
+      "sku": "BAK-01",
+      "name": "Croissant",
+      "price": 375,
+      "taxRate": 0.08,
+      "stock": 39
+    },
+    {
+      "sku": "BAK-02",
+      "name": "Blueberry muffin",
+      "price": 350,
+      "taxRate": 0.08,
+      "stock": 40
+    },
+    {
+      "sku": "SND-01",
+      "name": "Turkey sandwich",
+      "price": 895,
+      "taxRate": 0.08,
+      "stock": 25
+    },
+    {
+      "sku": "BEV-01",
+      "name": "Orange juice",
+      "price": 400,
+      "taxRate": 0.08,
+      "stock": 30
+    },
+    {
+      "sku": "BEV-02",
+      "name": "Sparkling water",
+      "price": 250,
+      "taxRate": 0.08,
+      "stock": 60
+    }
+  ],
+  "orders": [
+    {
+      "id": "4da6854a-ffe3-42c2-a1f8-f3babb8d9f22",
+      "items": [
+        {
+          "sku": "COF-01",
+          "name": "Espresso",
+          "price": 300,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-02",
+          "name": "Latte",
+          "price": 450,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "COF-03",
+          "name": "Cappuccino",
+          "price": 425,
+          "taxRate": 0.08,
+          "qty": 1
+        },
+        {
+          "sku": "BAK-01",
+          "name": "Croissant",
+          "price": 375,
+          "taxRate": 0.08,
+          "qty": 1
+        }
+      ],
+      "discountPct": 0,
+      "paymentMethod": "cash",
+      "subtotal": 1550,
+      "discount": 0,
+      "tax": 124,
+      "total": 1674,
+      "cashier": "manager",
+      "status": "paid",
+      "createdAt": "2026-10-08T10:36:59.747Z",
+      "syncedAt": "2026-10-08T10:36:59.765Z"
+    }
+  ],
+  "users": [
+    {
+      "username": "manager",
+      "role": "manager",
+      "passHash": "dcca98a49b0a1121aff6208258ccd5b8:2a8856852512edea1da5d25608c45cdb41e26044f26caeee592752aa9129cd46d87bbb54b503ab909320b0f4e5cbe11ad493089e181dc4a112098c1f951c3937",
+      "createdAt": "2026-10-08T10:34:13.502Z"
+    },
+    {
+      "username": "scott",
+      "role": "cashier",
+      "passHash": "7e4ac8a85c4c3535fe17c0848ece28a4:bb30d128deb2cb9d66eb3e95c88faef77616fab34616635b3ba1ddb8d74d8769b8bb73c041b1f81d43ee7ab0e5117d2425cede6cf4396d6254ddec6dfa5ed935",
+      "createdAt": "2026-10-08T10:50:50.421Z"
+    }
+  ],
+  "settings": {}
+}

@@ -1,0 +1,10 @@
+{
+  "name": "pos-auth",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test shared/cart.test.js shared/roles.test.js server/auth.test.js scripts/shell.test.js scripts/sw.test.js scripts/receipt.test.js",
+    "install:all": "npm --prefix server install",
+    "start": "node server/index.js"
+  }
+}

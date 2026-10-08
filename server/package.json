@@ -1,0 +1,6 @@
+{
+  "name": "pos-auth-server",
+  "type": "module",
+  "scripts": { "start": "node index.js" },
+  "dependencies": { "express": "^4.19.2" }
+}
