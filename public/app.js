@@ -424,7 +424,7 @@ function registerServiceWorker() {
   const offerUpdate = (worker) => {
     $('update').hidden = false;
     $('updateBtn').onclick = () => {
-      if (state.items.length && !confirm('Reloading clears the current sale. Continue?')) return;
+      if (state.items.length && !confirm('Reloading. Continue?')) return;
       worker.postMessage('SKIP_WAITING');
     };
   };

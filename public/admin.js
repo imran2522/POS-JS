@@ -12,7 +12,7 @@ export function createAdmin({ api, showModal, esc, friendly, fmt, closeBtn, erro
         <h3>Products and stock</h3>
         ${products.length ? products.map((p) => `
           <p class="${p.active ? '' : 'inactive'}">
-            <span>${esc(p.name)}<small>${esc(p.sku)} · ${fmt(p.price)} · tax ${pct(p.taxRate)}% · stock ${p.stock}${p.active ? '' : ' · hidden from till'}</small></span>
+            <span>${esc(p.name)}<small>${esc(p.sku)} · ${fmt(p.price)} · tax ${pct(p.taxRate)}% · stock ${p.stock}${p.active ? '' : ' · hidden from POS'}</small></span>
             <button class="small ghost" data-edit="${esc(p.sku)}">Edit</button>
           </p>`).join('') : '<p class="empty">No products yet.</p>'}
         <button data-newprod>Add product</button>
@@ -36,7 +36,7 @@ export function createAdmin({ api, showModal, esc, friendly, fmt, closeBtn, erro
         <label>Price <input name="price" value="${esc(v.price)}" inputmode="decimal" placeholder="4.50" required /></label>
         <label>Tax % <input name="tax" value="${esc(v.tax)}" inputmode="decimal" placeholder="8" required /></label>
         <label>In stock <input name="stock" type="number" min="0" step="1" value="${esc(v.stock)}" required /></label>
-        ${p ? `<label class="check"><input type="checkbox" name="active" ${v.active ? 'checked' : ''} /> Show on the till</label>` : ''}
+        ${p ? `<label class="check"><input type="checkbox" name="active" ${v.active ? 'checked' : ''} /> Show on the POS</label>` : ''}
         <button type="submit">${p ? 'Save changes' : 'Add product'}</button>
         <button type="button" class="ghost" data-cancelprod>Cancel</button>
       </form>

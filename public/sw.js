@@ -2,8 +2,8 @@
 // The server swaps the build placeholder below for a hash of the app files, so any code
 // change automatically produces a new cache and an "update ready" prompt. Nothing to bump by hand.
 const VERSION = '__BUILD__';
-const CACHE = `till-${VERSION}`;
-const TIMEOUT = self.TILL_TIMEOUT ?? 3000; // a slow shop connection must not freeze the till
+const CACHE = `js-pos-${VERSION}`;
+const TIMEOUT = self.JS_POS_TIMEOUT ?? 3000; // a slow shop connection must not freeze JS POS
 
 const SHELL = [
   '/', '/index.html', '/styles.css',
@@ -21,7 +21,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('till-') && k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => (k.startsWith('js-pos-') || k.startsWith('till-')) && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -53,6 +53,6 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== self.location.origin) return;
   if (url.pathname.startsWith('/api/')) return; // data is handled by the app's own offline queue
-  // Any page navigation falls back to the cached app, so a reload while offline still opens the till.
+  // Any page navigation falls back to the cached app, so a reload while offline still opens JS POS.
   e.respondWith(networkFirst(req, req.mode === 'navigate' ? '/index.html' : null));
 });

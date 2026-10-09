@@ -7,7 +7,7 @@
 body { margin: 0; background: var(--paper); color: var(--ink); }
 button { font: inherit; cursor: pointer; border: 0; border-radius: 10px; padding: 14px 18px;
   background: var(--pine); color: var(--white); min-height: 48px; }
-button:hover:not(:disabled) { background: var(--pine-dark); }
+button:hover:not(:disabled) { background: var(--pine-dark); color: var(--white); }
 button:disabled { opacity: .4; cursor: default; }
 button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
 button:focus-visible, input:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }

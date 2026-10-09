@@ -29,7 +29,7 @@ function makeWorker() {
   };
   class ShimRequest extends Request { constructor(u, o) { super(new URL(u, BASE), o); } }
   const sandbox = {
-    self: { addEventListener: (t, fn) => { handlers[t] = fn; }, location: { origin: BASE }, clients: { claim: async () => { state.claimed = true; } }, skipWaiting() { state.skipped = true; }, TILL_TIMEOUT: 40 },
+    self: { addEventListener: (t, fn) => { handlers[t] = fn; }, location: { origin: BASE }, clients: { claim: async () => { state.claimed = true; } }, skipWaiting() { state.skipped = true; }, JS_POS_TIMEOUT: 40 },
     caches, Request: ShimRequest, Response, URL, setTimeout, Promise,
     fetch: async (r) => {
       if (state.hang) return new Promise(() => {});
@@ -49,7 +49,7 @@ function makeWorker() {
 test('installs the whole app shell into a versioned cache', async () => {
   const w = makeWorker();
   await w.fire('install', {});
-  const cache = w.stores.get('till-testbuild');
+  const cache = w.stores.get('js-pos-testbuild');
   assert.ok(cache.has(BASE + '/index.html') && cache.has(BASE + '/app.js') && cache.has(BASE + '/shared/cart.js'));
 });
 
@@ -79,7 +79,7 @@ test('online: serves fresh files and refreshes the cache', async () => {
   const w = makeWorker();
   await w.fire('install', {});
   await (await w.get('/api.js')).text();
-  assert.ok(w.stores.get('till-testbuild').has(BASE + '/api.js'));
+  assert.ok(w.stores.get('js-pos-testbuild').has(BASE + '/api.js'));
 });
 
 test('API calls are never intercepted or cached', async () => {
@@ -93,9 +93,10 @@ test('API calls are never intercepted or cached', async () => {
 test('activate removes old caches and takes control', async () => {
   const w = makeWorker();
   w.stores.set('till-oldbuild', new Map());
+  w.stores.set('js-pos-oldbuild', new Map());
   await w.fire('install', {});
   await w.fire('activate', {});
-  assert.deepEqual([...w.stores.keys()], ['till-testbuild']);
+  assert.deepEqual([...w.stores.keys()], ['js-pos-testbuild']);
   assert.ok(w.state.claimed);
 });
 

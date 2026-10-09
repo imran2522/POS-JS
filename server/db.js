@@ -110,7 +110,7 @@ export function priceAt(p, iso) {
 }
 
 // ---- shop settings (used on receipts) ----
-const DEFAULT_SETTINGS = { shopName: 'JS Store Coffee', address: '', phone: '', footer: 'Thank you!', currency: 'USD' };
+const DEFAULT_SETTINGS = { shopName: 'JS Store', address: 'XYZ Road', phone: '+9241-123-4567', footer: 'Thank you!', currency: 'USD' };
 export const getSettings = () => ({ ...DEFAULT_SETTINGS, ...load().settings });
 export function setSettings(patch) {
   load().settings = { ...getSettings(), ...patch };
